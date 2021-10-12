@@ -12,7 +12,7 @@
 
 extern int etext, edata, end;
  
-main(void) {
+int main(void) {
  	pid_t	pid;
  	int	shmid;
  	char	c, *shm, *s;

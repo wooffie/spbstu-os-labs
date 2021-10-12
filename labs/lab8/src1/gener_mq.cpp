@@ -9,7 +9,7 @@
 #include <sys/msg.h>
 
 #define MAX 5
-main(void){
+int main(void){
 FILE *fin;
 char	buffer[PIPE_BUF];
 char	u_char = 'A';

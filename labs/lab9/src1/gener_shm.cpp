@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include <sys/ipc.h>
 #include <sys/shm.h>
-main(void)
+int main(void)
 {
 key_t	key=15;
 int	shmid_1,shmid_2;
