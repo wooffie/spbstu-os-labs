@@ -3,7 +3,7 @@
 #include<stdlib.h>
 #include<unistd.h>
 #include<signal.h>
-main(void)
+int main(void)
 {
 int	i;
 void	signal_catcher(int);
