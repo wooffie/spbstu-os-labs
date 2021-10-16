@@ -14,9 +14,9 @@ $ make clean
 
 # Выполненные [работы](https://github.com/wooftown/spbstu-os-labs/tree/master/labs) (есть отчёт):
 - [x] ЛР1
-- [ ] ЛР2
+- [x] ЛР2
 - [ ] ЛР3
-- [ ] ЛР4
+- [x] ЛР4
 - [ ] ЛР5
 - [ ] ЛР6
 - [ ] ЛР7
