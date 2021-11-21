@@ -1,0 +1,5 @@
+#!/bin/bash
+while true; do
+	read text
+	echo you wrote $text
+done
