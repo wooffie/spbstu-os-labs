@@ -9,33 +9,42 @@
 #include <sys/ipc.h>
 #include <sys/shm.h>
 
-#define SHM_SIZE 1023  /* make it a 1K shared memory segment */
+#define SHM_SIZE 1023  /* make it a 1K - 1 shared memory segment */
 
 int main()
 {
-	int shmid;
-	char *data;
+	int shmid_1, shmid_2,shmid_3;
+	char *data_1 , *data_2, *data_3;
 	int mode;
-	for(int i = 0;i < 3; i++){
-		
-		/* make the key: */
+	if ((shmid_1=shmget(0, SHM_SIZE, 0644|IPC_CREAT)) == -1){
+    			perror("shmget shmid_1");
+    			exit(1);
+    			}
+    	if ((shmid_2=shmget(0, SHM_SIZE, 0644|IPC_CREAT)) == -1){
+    			perror("shmget shmid_1");
+    			exit(1);
+    			}
+    	if ((shmid_3=shmget(0, SHM_SIZE, 0644|IPC_CREAT)) == -1){
+    			perror("shmget shmid_1");
+    			exit(1);
+    			}
 
-		/* connect to (and possibly create) the segment: */
-		if ((shmid = shmget(15*i, SHM_SIZE, 0644 | IPC_CREAT)) == -1) {
-			perror("shmget");
-			exit(1);
-		}
-
-		/* attach to the segment to get a pointer to it: */
-		data = (char *) shmat(shmid, 0, 0);
-		if (data == (char *)(-1)) {
+	data_1 = (char *) shmat(shmid_1, 0, 0);
+		if (data_1 == (char *)(-1)) {
 			perror("shmat");
 			exit(1);
-		}
-
-		
+			}
+	data_2 = (char *) shmat(shmid_1, 0, 0);
+		if (data_1 == (char *)(-1)) {
+			perror("shmat");
+			exit(1);
+			}
+	data_3 = (char *) shmat(shmid_1, 0, 0);
+		if (data_1 == (char *)(-1)) {
+			perror("shmat");
+			exit(1);
+			}
 	
-}
 	
 	return 0;
 }

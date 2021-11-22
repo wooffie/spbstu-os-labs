@@ -3,7 +3,7 @@
  * Client - Internet domain, connection-oriented
  */
 #include "local_c_i.h"
-main(int argc,char *argv[] ){
+int main(int argc,char *argv[] ){
 int	orig_sock, /* Original socket descriptor in client */
 	len;	   /* Length of server address		   */
 struct	sockaddr_in

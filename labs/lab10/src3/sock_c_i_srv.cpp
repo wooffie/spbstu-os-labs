@@ -3,7 +3,7 @@
  * Server - Internet domain, connection-oriented 
  */
 #include "local_c_i.h"
-main(void) {
+int main(void) {
 int		orig_sock,/* Original socket descriptor in server */
 		new_sock, /* New socket descriptor from connect	 */
 		clnt_len; /* Length of client address		*/

@@ -8,7 +8,7 @@
 #include <sys/types.h>
 #include <sys/socket.h>
 #define BUF_SZ 10
-main(void){
+int main(void){
 int	sock[2];
 int	cpid, i;
 static char buf[BUF_SZ];

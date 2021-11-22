@@ -9,7 +9,7 @@
 #include <signal.h>
 
 
-main(void) {
+int main(void) {
 
     void signal_p(int);
     void signal_c(int);

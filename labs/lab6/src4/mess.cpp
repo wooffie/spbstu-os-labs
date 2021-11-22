@@ -9,7 +9,7 @@
 #include<sys/types.h>
 
 
-main(void) {
+int main(void) {
 
   void signal1(int);
 
