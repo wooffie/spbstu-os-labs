@@ -1,0 +1,7 @@
+#!/bin/bash
+while true; do
+	echo &(date)
+	tar -cvf "$2.tar" "$1"
+	echo "$1 folder archived ad $2.tar"
+	sleep $3
+done
