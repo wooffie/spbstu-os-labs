@@ -6,8 +6,6 @@
 #include<sys/types.h>
 #include<sys/stat.h>
 #include<fcntl.h>
-#include <errno.h>
-#include <signal.h>
 #define PUBLIC "/tmp/PUBLIC"
 #define B_SIZ (PIPE_BUF / 2)
 struct message{

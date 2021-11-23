@@ -1,5 +1,5 @@
 /* The client program  pipe_client.cpp */
-#include"p.h"
+#include"pipe_local.h"
 int main(void)
 {
 int	n, privatefifo, publicfifo;
