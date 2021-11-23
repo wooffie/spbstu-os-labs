@@ -1,23 +1,16 @@
 #include <stdio.h>
-
 #include <stdlib.h>
-
 #include <unistd.h>
-
 #include <errno.h>
-
 #include <signal.h>
-
 
 int main(void) {
 
     void signal_p(int);
     void signal_c(int);
-
     struct sigaction sa;
     sa.sa_flags = 0;
     sigemptyset( & sa.sa_mask);
-
     int p_pid = getpid();
     int c_pid = fork();
     if (c_pid == -1) {

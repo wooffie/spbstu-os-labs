@@ -1,8 +1,8 @@
 SHELL=/bin/bash
 
 all:
-	g++ mess.cpp -o mess
+	g++ signal_exchange.cpp -o signal_exchange
 
 clean:
-	$(RM) mess
+	$(RM) signal_exchange
 	
