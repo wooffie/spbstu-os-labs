@@ -1,7 +1,29 @@
 /* The client program  pipe_client.cpp */
 #include"pipe_local.h"
-int main(void)
-{
+void handle_sigint(int sig){
+	char buf[20];
+	sprintf(buf, "/tmp/fifo %d", getpid());
+    	const int result = remove(buf);
+	write(0, " Ahhh! SIGINT!\n", 15);
+	fprintf(stderr, "Removal status %d   %s\n", result, buf);
+	exit(0);
+}
+
+
+int main(void){
+
+system("./initServer.sh");
+
+
+struct sigaction sa;
+sa.sa_handler = handle_sigint;
+sa.sa_flags = 0;
+sigemptyset(&sa.sa_mask);
+
+if (sigaction(SIGINT, &sa, NULL) == -1) {
+	perror("sigaction");
+	exit(1);
+}
 int	n, privatefifo, publicfifo;
 static char buffer[PIPE_BUF];
 struct message msg;
